@@ -1,0 +1,20 @@
+version: "3.7"
+
+services:
+  postgres:
+    image: postgres:13
+    network_mode: bridge
+    restart: always
+    ports:
+      - "5434:5432"
+    environment:
+      POSTGRES_USER: sadrack
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: todolist
+
+  redis:
+    image: redis
+    network_mode: bridge
+    restart: always
+    ports:
+      - "6377:6379"
