@@ -4,28 +4,28 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import com.fclabs.todolist.BaseRepositoryTest;
-import com.fclabs.todolist.entities.List;
+import com.fclabs.todolist.entities.ListEntity;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class ListRepositoryTest extends BaseRepositoryTest {
+public class ListEntityRepositoryTest extends BaseRepositoryTest {
 
     @Autowired
     private ListRepository listRepository;
 
     @Test
     public void createList_withSuccess() {
-        List newList = buildList("work");
+        ListEntity newListEntity = buildList("work");
 
-        List response = listRepository.save(newList);
+        ListEntity response = listRepository.save(newListEntity);
 
         assertNotNull(response.getId());
-        assertEquals(newList.getName(), response.getName());
+        assertEquals(newListEntity.getName(), response.getName());
     }
 
-    private List buildList(String name) {
-        return List.builder().name(name).description("unit test").build();
+    private ListEntity buildList(String name) {
+        return ListEntity.builder().name(name).description("unit test").build();
     }
 
 }

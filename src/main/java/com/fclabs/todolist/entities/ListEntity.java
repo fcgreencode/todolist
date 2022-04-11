@@ -1,9 +1,6 @@
 package com.fclabs.todolist.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import lombok.Builder;
 import lombok.Data;
@@ -11,7 +8,8 @@ import lombok.Data;
 @Data
 @Builder
 @Entity
-public class List {
+@Table(name = "list")
+public class ListEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     

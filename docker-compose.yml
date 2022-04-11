@@ -6,7 +6,7 @@ services:
     network_mode: bridge
     restart: always
     ports:
-      - "5434:5432"
+      - "5432:5432"
     environment:
       POSTGRES_USER: sadrack
       POSTGRES_PASSWORD: 123
@@ -17,4 +17,4 @@ services:
     network_mode: bridge
     restart: always
     ports:
-      - "6377:6379"
+      - "6379:6379"
