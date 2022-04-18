@@ -48,7 +48,7 @@ public class ListServicesTest {
     @Test
     public void test_getById_withSuccess() {
         ListEntity listEntity = buildList("test");
-        listEntity.setId(102030);
+        listEntity.setId(102030L);
 
         when(listRepository.getById(listEntity.getId())).thenReturn(listEntity);
 
@@ -62,7 +62,7 @@ public class ListServicesTest {
     @Test
     public void test_getById_whenNotFound() {
         ListEntity listEntity = buildList("test");
-        listEntity.setId(102030);
+        listEntity.setId(102030L);
 
         when(listRepository.getById(listEntity.getId())).thenThrow(new EntityNotFoundException("Fake Error"));
 
